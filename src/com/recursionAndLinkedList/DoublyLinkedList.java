@@ -7,12 +7,14 @@ class NodeD{
     NodeD previos = null;
 }
 
+
 public class DoublyLinkedList {
     public NodeD head;
     private NodeD tail;
     private NodeD iter;
     private int size;
 
+    // Big-Oh = O(1)
     public void AddFirst(String value){
         NodeD temp = new NodeD();
         temp.value=value;
@@ -20,6 +22,7 @@ public class DoublyLinkedList {
         tail = temp;
         size+=1;
     }
+    // Big-Oh = O(1)
     public void AddLast(String value){
         NodeD temp = new NodeD();
         temp.value=value;
@@ -29,11 +32,13 @@ public class DoublyLinkedList {
         size+=1;
     }
 
+    // Big-Oh = O(1)
     public void PlayMusicList(){
         iter=head;
         System.out.println(iter.value);
     }
 
+    // Big-Oh = O(n)
     public void InsertLocation(String value,int location){
         NodeD temp = new NodeD();
         temp.value = value;
@@ -60,6 +65,7 @@ public class DoublyLinkedList {
         }
     }
 
+    // Big-Oh = O(1)
     public void GoNext(){
         if(iter==tail) System.out.println(tail.value);
         else{
@@ -67,6 +73,7 @@ public class DoublyLinkedList {
             System.out.println(iter.value);
         }
     }
+    // Big-Oh = O(1)
     public void GoPrev(){
         if(iter==head) System.out.println(head.value);
         else{
@@ -75,10 +82,12 @@ public class DoublyLinkedList {
         }
     }
 
+    // Big-Oh = O(1)
     public void DeleteLast(){
         DeleteLocation(size);
     }
 
+    // Big-Oh = O(n)
     public void DeleteLocation(int location){
         if(location<=0){
             head.next.previos=null;
@@ -100,6 +109,7 @@ public class DoublyLinkedList {
         }
     }
 
+    // Big-Oh = O(n)
     public void PrintAll(){
         NodeD iter = head;
         while(iter!=null){
@@ -107,6 +117,8 @@ public class DoublyLinkedList {
             iter=iter.next;
         }
     }
+
+    // Big-Oh = O(n)
     public void PrintReverse(){
         NodeD iter = tail;
         while (iter!=null){

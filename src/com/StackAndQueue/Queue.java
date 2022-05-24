@@ -8,6 +8,7 @@ class QueueNode{
 public class Queue {
     private QueueNode front=null,end=null;
 
+    // Big-Oh = O(1)
     public QueueNode Dequeue(){
         if(front!=null){
             var temp = front;
@@ -16,6 +17,8 @@ public class Queue {
         }
         else return null;
     }
+
+    // Big-Oh = O(1)
     public void Enqueue(int value){
         QueueNode temp = new QueueNode();
         temp.value=value;
@@ -29,6 +32,8 @@ public class Queue {
             end=end.next;
         }
     }
+
+    // Big-Oh = O(n)
     public void PrintQueue(){
         QueueNode iter = front;
         while(iter!=end.next){

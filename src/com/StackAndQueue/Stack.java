@@ -1,7 +1,5 @@
 package com.StackAndQueue;
 
-import java.nio.file.StandardOpenOption;
-
 class StackNode{
     int value;
     StackNode next = null;
@@ -11,6 +9,7 @@ public class Stack {
     public StackNode TopOfStack = null;
     private int size=0;
 
+    // Big-Oh = O(1)
     public void Push(int value){
         StackNode temp = new StackNode();
         temp.value = value;
@@ -24,6 +23,7 @@ public class Stack {
         size+=1;
     }
 
+    // Big-Oh = O(1)
     public StackNode Pop(){
         var topNode = TopOfStack;
         if(size==0){
@@ -36,9 +36,13 @@ public class Stack {
             return topNode;
         }
     }
+
+    // Big-Oh = O(1)
     public StackNode Peek(){
         return TopOfStack;
     }
+
+    // Big-Oh = O(n)
     public void PrintStack(){
         StackNode iter= TopOfStack;
         while(iter!=null){
